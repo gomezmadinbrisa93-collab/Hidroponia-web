@@ -3,7 +3,7 @@ let nombre = localStorage.getItem("nombreUsuario");
 let info = document.getElementById("usuarioInfo");
 
 // Mostrar usuario
-if(sesion == "true" && info){
+if(sesion === "true" && info){
     info.innerHTML = `
         <p>Hola, ${nombre}</p>
         <button onclick="cerrarSesion()" class="btn">Cerrar sesión</button>
@@ -18,11 +18,10 @@ function cerrarSesion(){
 }
 
 // Proteger páginas
-let paginaProtegida = ["carrito.html", "tienda.html"];
-let ruta = window.location.pathname.split("/").pop();
+let pagina = window.location.pathname;
 
-if(paginaProtegida.includes(ruta)){
-    if(localStorage.getItem("sesionActiva") != "true"){
+if(pagina.includes("carrito.html") || pagina.includes("tienda.html")){
+    if(localStorage.getItem("sesionActiva") !== "true"){
         alert("Debes iniciar sesión");
         window.location.href = "login.html";
     }
