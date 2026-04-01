@@ -20,7 +20,12 @@ function cerrarSesion(){
 // Proteger páginas
 let pagina = window.location.pathname;
 
-if(pagina.includes("carrito.html") || pagina.includes("tienda.html")){
+// 🚫 NO aplicar en login ni registro
+if(
+    (pagina.includes("carrito.html") || pagina.includes("tienda.html")) &&
+    !pagina.includes("login.html") &&
+    !pagina.includes("registro.html")
+){
     if(localStorage.getItem("sesionActiva") !== "true"){
         alert("Debes iniciar sesión");
         window.location.href = "login.html";
