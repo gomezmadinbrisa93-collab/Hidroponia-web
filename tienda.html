@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>YG - Tienda</h1>
+            <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <!-- Usuario -->
+    <div id="usuarioInfo"></div>
+</header>
+
+<main>
+
+<section class="contenido">
+    <h2>Nuestros Productos</h2>
+</section>
+
+<div class="buscador">
+    <input type="text" id="buscar" placeholder="Buscar producto..." onkeyup="buscarProducto()">
+</div>
+
+<div class="filtros">
+    <button onclick="filtrar('todos')">Todos</button>
+    <button onclick="filtrar('solucion')">Solución</button>
+    <button onclick="filtrar('semillas')">Semillas</button>
+    <button onclick="filtrar('sistemas')">Sistemas</button>
+</div>
+
+<section class="productos">
+
+<div class="card" data-categoria="sistemas">
+    <img src="imagenes/1.webp" class="img-producto">
+    <h3>Sistema NFT</h3>
+    <p>Sistema hidropónico Nutrient Film Technique para cultivo continuo.</p>
+    <span>$850</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Sistema NFT', 850, 'imagenes/1.webp'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="sistemas">
+    <img src="imagenes/2.jpg" class="img-producto">
+    <h3>Sistema Raíz Flotante DWC</h3>
+    <p>Sistema Deep Water Culture con oxigenación constante.</p>
+    <span>$900</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Sistema Raíz Flotante DWC', 900, 'imagenes/2.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="sistemas">
+    <img src="imagenes/3.jpg" class="img-producto">
+    <h3>Torres Verticales</h3>
+    <p>Cultivo vertical para ahorrar espacio.</p>
+    <span>$750</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Torres Verticales', 750, 'imagenes/3.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="sistemas">
+    <img src="imagenes/4.webp" class="img-producto">
+    <h3>Sistema por Goteo</h3>
+    <p>Sistema hidropónico con riego por goteo automático.</p>
+    <span>$650</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Sistema por Goteo', 650, 'imagenes/4.webp'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/5.jpg" class="img-producto">
+    <h3>Solución Nutritiva A</h3>
+    <p>Solución nutritiva para crecimiento de plantas.</p>
+    <span>$150</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Solución Nutritiva A', 150, 'imagenes/5.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/6.jpg" class="img-producto">
+    <h3>Solución Nutritiva B</h3>
+    <p>Complemento mineral para hidroponía.</p>
+    <span>$150</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Solución Nutritiva B', 150, 'imagenes/6.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/7.jpg" class="img-producto">
+    <h3>Contenedor Solución</h3>
+    <p>Recipiente para preparar solución nutritiva.</p>
+    <span>$120</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Contenedor Solución', 120, 'imagenes/7.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/8.jpg" class="img-producto">
+    <h3>Lana de Roca</h3>
+    <p>Sustrato para germinación hidropónica.</p>
+    <span>$80</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Lana de Roca', 80, 'imagenes/8.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/9.jpg" class="img-producto">
+    <h3>Perlita</h3>
+    <p>Sustrato ligero para cultivo hidropónico.</p>
+    <span>$70</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Perlita', 70, 'imagenes/9.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/10.jpg" class="img-producto">
+    <h3>Fibra de Coco</h3>
+    <p>Sustrato natural para raíces.</p>
+    <span>$90</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Fibra de Coco', 90, 'imagenes/10.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/11.jpg" class="img-producto">
+    <h3>Arcilla Expandida</h3>
+    <p>Bolas Hydroton para soporte de raíces.</p>
+    <span>$110</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Arcilla Expandida', 110, 'imagenes/11.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/12.jpg" class="img-producto">
+    <h3>Bomba de Aire</h3>
+    <p>Oxigenación para sistema hidropónico.</p>
+    <span>$200</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Bomba de Aire', 200, 'imagenes/12.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/13.jpg" class="img-producto">
+    <h3>Bomba de Agua</h3>
+    <p>Circulación de agua en el sistema.</p>
+    <span>$300</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Bomba de Agua', 300, 'imagenes/13.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="solucion">
+    <img src="imagenes/14.jpg" class="img-producto">
+    <h3>Luces LED</h3>
+    <p>Iluminación para cultivos interiores.</p>
+    <span>$250</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Luces LED', 250, 'imagenes/14.jpg'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="semillas">
+    <img src="imagenes/15.webp" class="img-producto">
+    <h3>Hojas Verdes</h3>
+    <p>Plantas de hojas verdes para cultivo hidropónico.</p>
+    <span>$40</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Hojas Verdes', 40, 'imagenes/15.webp'); return false;">Comprar</a>
+</div>
+
+<div class="card" data-categoria="semillas">
+    <img src="imagenes/16.webp" class="img-producto">
+    <h3>Semillas</h3>
+    <p>Semillas para cultivo hidropónico.</p>
+    <span>$50</span>
+    <a href="#" class="btn" onclick="agregarCarrito('Semillas', 50, 'imagenes/16.webp'); return false;">Comprar</a>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 YG</p>
+</footer>
+
+<script src="carrito.js"></script>
+
+<script>
+function filtrar(categoria){
+    let productos = document.querySelectorAll(".card");
+
+    productos.forEach(producto => {
+        if(categoria === "todos"){
+            producto.style.display = "block";
+        } else {
+            if(producto.dataset.categoria === categoria){
+                producto.style.display = "block";
+            } else {
+                producto.style.display = "none";
+            }
+        }
+    });
+}
+
+function buscarProducto(){
+    let input = document.getElementById("buscar").value.toLowerCase();
+    let productos = document.querySelectorAll(".card");
+
+    productos.forEach(producto => {
+        let texto = producto.innerText.toLowerCase();
+        if(texto.includes(input)){
+            producto.style.display = "block";
+        } else {
+            producto.style.display = "none";
+        }
+    });
+}
+</script>
+
+<script src="sesion.js"></script>
+</body>
+</html>

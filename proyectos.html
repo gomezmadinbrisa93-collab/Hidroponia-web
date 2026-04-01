@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* ===== MODAL ===== */
+    .modal{
+        display:none;
+        position:fixed;
+        z-index:2000;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-contenido{
+        background:#111;
+        margin:8% auto;
+        padding:30px;
+        width:60%;
+        border-radius:20px;
+        color:white;
+        position:relative;
+        box-shadow:0 0 30px rgba(0,255,157,0.3);
+        animation: aparecerModal 0.3s ease;
+    }
+
+    .cerrar{
+        position:absolute;
+        top:15px;
+        right:20px;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    @keyframes aparecerModal{
+        from{
+            transform:translateY(-40px);
+            opacity:0;
+        }
+        to{
+            transform:translateY(0);
+            opacity:1;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>YG - Proyectos</h1>
+        <nav>
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <!-- Usuario -->
+    <div id="usuarioInfo"></div>
+</header>
+
+<section class="proyectos-hero">
+    <div class="wave-bg"></div>
+    <h2>Proyectos Transversales</h2>
+</section>
+
+<section class="proyectos">
+    <div class="proyectos-grid">
+
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto1.jpg">
+            <h3>Sistema Hidropónico Escolar</h3>
+            <p>
+                Sistema NFT para cultivo de lechuga controlando nutrientes,
+                agua y crecimiento de plantas en ambiente escolar.
+            </p>
+            <button class="btn ver-proyecto"
+data-titulo="Sistema Hidropónico Escolar"
+data-texto="Este proyecto consiste en un sistema NFT para cultivar lechuga controlando nutrientes, agua, pH y crecimiento mediante sensores.">
+Ver Proyecto
+</button>
+        </div>
+
+        <div class="proyecto-card">
+            <img src="imagenes/proyecto2.jpg">
+            <h3>Invernadero Automatizado</h3>
+            <p>
+                Control automático de temperatura, humedad y riego
+                mediante sensores y temporizadores electrónicos.
+            </p>
+            <button class="btn ver-proyecto"
+data-titulo="Invernadero Automatizado"
+data-texto="Este proyecto controla temperatura, humedad, riego y ventilación automáticamente usando sensores y un sistema electrónico.">
+Ver Proyecto
+</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 YG</p>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div id="modal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2 id="modal-titulo">Título</h2>
+        <p id="modal-texto">Información del proyecto...</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener("click", function(e){
+
+    if(e.target.classList.contains("ver-proyecto")){
+        let modal = document.getElementById("modal");
+        let tituloModal = document.getElementById("modal-titulo");
+        let textoModal = document.getElementById("modal-texto");
+
+        let titulo = e.target.getAttribute("data-titulo");
+        let texto = e.target.getAttribute("data-texto");
+
+        tituloModal.innerText = titulo;
+        textoModal.innerText = texto;
+
+        modal.style.display = "block";
+    }
+
+    if(e.target.classList.contains("cerrar")){
+        document.getElementById("modal").style.display = "none";
+    }
+
+});
+
+/* Cerrar fuera */
+window.onclick = function(event){
+    let modal = document.getElementById("modal");
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+/* Cerrar con ESC */
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        document.getElementById("modal").style.display = "none";
+    }
+});
+</script>
+
+<script src="sesion.js"></script>
+
+</body>
+</html>
